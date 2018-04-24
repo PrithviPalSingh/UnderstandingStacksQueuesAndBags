@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace UnderstandingStacksQueuesAndBags
 {
-    class LinkedListQueueOfStrings
+    //class LinkedListQueueOfStrings 
+    class LinkedListQueueOfStrings<T>
     {
         private Node Head = null;
         private Node Tail = null;
 
         private class Node
         {
-            public string Item;
+            //public string Item; 
+            public T Item;
             public Node Next;
         }
 
@@ -22,7 +24,8 @@ namespace UnderstandingStacksQueuesAndBags
             return Head == null;
         }
 
-        public void Enqueue(string item)
+        //public void Enqueue(string item)  
+        public void Enqueue(T item)
         {
             Node lastNode = Tail;
             Tail = new Node
@@ -41,9 +44,11 @@ namespace UnderstandingStacksQueuesAndBags
             }
         }
 
-        public string Dequeue()
+        //public string Dequeue() 
+        public T Dequeue()
         {
-            string itemToDelete = Head.Item;
+            //string itemToDelete = Head.Item; 
+            T itemToDelete = Head.Item;
             Head = Head.Next;
             if (IsEmpty())
             {
